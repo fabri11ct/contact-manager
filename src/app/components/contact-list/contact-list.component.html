@@ -1,0 +1,12 @@
+<h2>Lista Contatti</h2>
+
+<div class="contact-list-container">
+  <div *ngFor="let contact of contacts()">
+    <app-contact-item
+      [contact]="contact"
+      (deleteRequest)="handleDelete($event)"
+    />
+  </div>
+
+  <p *ngIf="contacts().length === 0">Nessun contatto da visualizzare.</p>
+</div>
